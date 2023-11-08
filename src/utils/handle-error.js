@@ -32,6 +32,9 @@ app.on('error', (err, ctx) => {
       code = -1007
       message = '没有权限修改'
       break
+    case 'label_repeat':
+      code = -1008
+      message = '标签已存在'
   }
   ctx.body = {
     code,

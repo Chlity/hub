@@ -38,6 +38,7 @@ const tokenServer = async (ctx, next) => {
     // 执行下一个中间件
     await next()
   } catch (error) {
+    console.log(error)
     return ctx.app.emit('error', 'token_error', ctx)
   }
 }

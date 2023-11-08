@@ -3,7 +3,6 @@ class Commentcontroller {
   async create(ctx, next) {
     const { content, moment_id } = ctx.request.body
     const { id } = ctx.user
-    console.log(content, moment_id, id)
     const res = await CommentServers.sendingComment(moment_id, id, content)
     ctx.body = {
       code: 0,
